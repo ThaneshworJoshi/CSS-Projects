@@ -1,0 +1,171 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+  font-size: 45px;
+  border: 5px solid black;
+  padding: 40px 80px;
+  position: relative;
+  overflow: hidden;
+  transition: color 1s;
+}
+
+
+/* Rotate Button  */
+
+.btn-1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgb(108, 191, 108);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transform-origin: bottom left;
+  transform: rotate(-90deg);
+  transition: transform 1s;
+}
+
+
+.btn-1:hover::before{
+  transform: rotate(0deg);
+}
+
+
+/* Swip Button  */
+
+.btn-2:hover{
+  color: white
+}
+
+.btn-2::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(77, 155, 223);
+  z-index: -1;
+  transition: transform 1s;
+  transform: translateX(-100%);'
+}
+
+.btn-2:hover::before{
+  transform: translateX(-0%);
+}
+
+
+/* Cross Button */
+
+.btn-3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: blueviolet;
+  transition: 1s;
+  transform: rotateX(90deg);
+  z-index: -1;
+
+}
+
+.btn-3::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: blueviolet;
+  transition: 1s;
+  transform: rotateY(90deg);
+  z-index: -1;
+}
+
+.btn-3:hover{
+  color: white;
+}
+
+.btn-3:hover::before {
+  transform: rotateY(0);
+}
+
+.btn-3:hover::after {
+  transform: rotateX(0);
+}
+
+.btn-4{
+  border: 3px solid red;
+  font-weight: 300;
+  letter-spacing: -2px;
+  transition: all 1s;
+}
+
+.btn-4:hover{
+  font-weight: 900;
+  letter-spacing: 10px;
+  border: 7px solid red;
+}
+
+/* Swap Button  */
+
+.btn-5::before{
+  content: 'YEAH';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgb(108, 191, 108);
+  height: 100%;
+  width: 100%;
+  transform-origin: bottom left;
+  transform: translateY(-100%);
+  transition: transform 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-5:hover::before{
+  transform: translateY(0);
+}
+
+/* Button 6 */
+
+.btn-6 {
+  transition: transform background-color 1s;
+}
+
+.btn-6:hover{
+  background-color: red;
+
+}
+
+.btn-6::before{
+  content: '';
+  background-color: rgb(47, 192, 57);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  transition: transform 1s;
+
+  transform: translateX(-100%) rotate(45deg);
+
+}
+
+.btn-6:hover::before{
+  transform: translateX(100%) rotate(45deg);
+}

@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  gap: 40px;
+  perspective: 1500px;
+}
+
+img,
+.img-rotate-z {
+  width: 200px;
+  display: block;
+  margin: auto;
+  transition: transform 1s;
+}
+
+.img:hover {
+  transform: translateZ(200px);
+}
+
+.img-rotate-z:hover {
+  transform: rotateZ(100deg);
+}
+
+.img-rotate-x:hover {
+  transform: rotateX(100deg);
+}
+
+.img-rotate-y:hover {
+  transform: rotateY(100deg);
+}
