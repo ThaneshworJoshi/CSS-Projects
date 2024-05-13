@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2e364a;
+    color: white;
+}
+
+.container {
+    max-width: 1536px;
+    margin-inline: auto;
+    margin-top: 90px;
+}
+
+
+/* Cross icons */
+.cross-icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
+}
+
+.cross-icon:before,
+.cross-icon:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.cross-icon:before {
+    transform: rotate(45deg);
+}
+
+.cross-icon:after {
+    transform: rotate(-45deg);
+}
+
+.default-state {
+    /* Define the default state */
+    transform: perspective(18cm) rotateY(0deg);
+    transform-style: preserve-3d;
+    transform-origin: left;
+
+    /* Add transition properties */
+    transition: transform 0.4s ease;
+}
+
+.active {
+    transform: perspective(18cm) rotateY(20deg);
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: inline-block;
+    border: 1px solid rgb(207, 200, 200);
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    background: #a2aecc;
+    position: relative;
+}
+
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure the video fills the container */
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    /* Add a transition for smooth hover effect */
+    opacity: 0;
+}
+
+.grid-item:hover {
+    transform: scale(1.06) translateX(30px);
+    z-index: 1000;
+}
+
+.grid-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.grid-item:nth-child(2) {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.grid-item:nth-child(4) {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.grid-item:nth-child(7) {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+/* OR if number of grids items is excessive */
+.grid-item:nth-child(7n+1) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.grid-item:nth-child(7n+2) {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.grid-item:nth-child(7n+4) {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.grid-item:nth-child(7n+7) {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.description img {
+    max-width: 120px;
+    margin-bottom: 20px;
+}
+
+
+.grid-item:hover .description {
+    opacity: 0;
+}
+
+.grid-item:hover .video {
+    opacity: 1;
+}
