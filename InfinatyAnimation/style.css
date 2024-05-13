@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2e364a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+img {
+    display: block;
+}
+
+.top-circle {
+    width: 200px;
+    height: 200px;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: relative;
+}
+
+.bottom-circle {
+    width: 200px;
+    height: 200px;
+    border: 5px solid white;
+    border-radius: 50%;
+    position: relative;
+
+}
+
+.top-dot {
+    width: 20px;
+    height: 20px;
+    background: #c7c0c0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 10px);
+    animation: top-animation 5s linear infinite;
+    z-index: 100;
+    border-top: 3px solid black;
+    overflow: hidden;
+}
+
+.bottom-dot {
+    width: 20px;
+    height: 20px;
+    background: #c7c0c0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 10px);
+    animation: bottom-animation 5s linear infinite;
+    z-index: 100;
+    overflow: hidden;
+
+}
+
+@keyframes top-animation {
+    0% { transform: rotate(0deg) translateY(100px); }
+    50% { transform:  rotate(360deg) translateY(100px); visibility: hidden;}
+    100% { transform: rotate(360deg) translateY(100px); visibility: hidden;}
+}
+
+@keyframes bottom-animation {
+    0% { transform: rotate(360deg) translateY(-100px); visibility: hidden;}
+    50% { transform:  rotate(360deg) translateY(-100px); visibility: hidden;}
+    100% { transform: rotate(0deg) translateY(-100px); }
+}
+
+.top-dot-image {
+    width: 100%;
+    height: auto;
+    animation: top-image-rotation 5s linear infinite;
+}
+
+.bottom-dot-image {
+    width: 100%;
+    height: auto;
+    animation: bottom-image-rotation 5s linear infinite;
+}
+
+@keyframes top-image-rotation {
+    0% { transform: rotate(0deg)}
+    50% { transform:  rotate(-360deg)}
+    100% { transform: rotate(-360deg)}
+}
+
+@keyframes bottom-image-rotation {
+    0% { transform: rotate(-360deg)}
+    50% { transform:  rotate(-360deg)}
+    100% { transform: rotate(0deg)}
+}
